@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: grafana-assign-clusterRole
+  name: assign-cluster-role
   namespace: xraylab-1
   annotations:
     argocd.argoproj.io/sync-wave: "9"
@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       containers:
-      - name: assign-clusterRole
+      - name: assign-cluster-role
         image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
         command:
         - /bin/bash
