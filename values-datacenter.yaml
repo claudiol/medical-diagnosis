@@ -10,7 +10,7 @@ clusterGroup:
   - xraylab-1
   - knative-serving
   - staging
-  - vault
+  #- vault
   - medical-diagnosis-datacenter
 
   operatorgroupExcludes:
@@ -51,88 +51,99 @@ clusterGroup:
 
   projects:
   - datacenter
+  #- vault
  
-  applications:
-  - name: acm
-    namespace: open-cluster-management
-    project: datacenter
-    path: common/acm
-
-  - name: odh
-    namespace: opendatahub
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/opendatahub
-
-  - name: cephobjectstore
-    namespace: openshift-storage
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/odf
-
-  - name: knative
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/knative
-
-  - name: demo
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/demo
-
-  - name: user
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/user
-    
-  - name: kafka
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/kafka
-
-#  - name: kafkasource
+#  applications:
+#  - name: acm
+#    namespace: open-cluster-management
+#    project: datacenter
+#    path: common/acm
+#
+#  - name: odh
+#    namespace: opendatahub
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/opendatahub
+#
+#  - name: cephobjectstore
+#    namespace: openshift-storage
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/odf
+#
+#  - name: knative
 #    namespace: xraylab-1
 #    project: datacenter
-#    path: charts/datacenter/xraylab/kafkasource
-
-  - name:  grafana
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/grafana
-
-  - name:  imageserver
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/image-server
-
-  - name:  imagegenerator
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/image-generator
-    
-  - name: xraydb
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/xraydb
-  
-  - name: hashivault
-    namespace: vault
-    project: datacenter
-    chart: vault
-    repoURL: https://helm.releases.hashicorp.com
-    targetRevision: 0.17.1
-    overrides:
-    - name: build.enabled
-      value: "false"
-      forceString: true
-    - name: deploy.route.tls.enabled
-      value: "true"
-      forceString: true
-    - name: global.openshift
-      value: "true"
-      forceString: true
-    - name: server.dev.enabled
-      value: "true"
-      forceString: true
-
+#    path: charts/datacenter/medical-diagnosis/knative
+#
+#  - name: demo
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/demo
+#
+#  - name: user
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/user
+#    
+#  - name: kafka
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/kafka
+#
+#  - name:  grafana
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/grafana
+#
+#  - name:  imageserver
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/image-server
+#
+#  - name:  imagegenerator
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/image-generator
+#    
+#  - name: xraydb
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/xraydb
+#  
+#  - name: vault
+#    namespace: vault
+#    project: datacenter
+#    chart: vault
+#    repoURL: https://helm.releases.hashicorp.com
+#    targetRevision: v0.19.0
+#    overrides:
+#    - name: global.openshift
+#      value: "true"
+#    - name: injector.enabled
+#      value: "false"
+#    - name: ui.enabled
+#      value: "true"
+#    - name: ui.serviceType
+#      value: LoadBalancer
+#    - name: server.route.enabled
+#      value: "true"
+#    - name: server.route.host
+#      value: null
+#    - name: server.route.tls.termination
+#      value: edge
+#    - name: server.image.repository
+#      value: "registry.connect.redhat.com/hashicorp/vault"
+#    - name: server.image.tag
+#      value: "1.9.2-ubi"
+#
+#  - name: golang-external-secrets
+#    namespace: golang-external-secrets
+#    project: golang-external-secrets
+#    path: common/golang-external-secrets
+#
+#  - name: external-secrets
+#    namespace: external-secrets
+#    project: golang-external-secrets
+#    path: charts/datacenter/external-secrets
 #
 #  To have apps in multiple flavors, use namespaces and use helm overrides as appropriate
 #
