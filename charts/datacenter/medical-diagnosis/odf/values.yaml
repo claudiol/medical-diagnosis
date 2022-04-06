@@ -1,0 +1,101 @@
+odf:
+  namespace: openshift-storage
+  route:
+    name: s3-rgw
+    kind: Service
+    serviceName: rook-ceph-rgw-ocs-storagecluster-cephobjectstore
+    weight: 100
+    port:
+      targetPort: http
+    tls:
+      termination: edge
+  mon:
+    requests:
+       cpu: 1
+       memory: 2Gi
+  mds:
+    requests:
+      cpu: 3
+      memory: 8Gi
+  mgr:
+    requests:
+      cpu: 1
+      memory: 3Gi
+  noobaacore:
+    requests:
+      cpu: 1
+      memory: 4Gi
+  noobaadb:
+    requests:
+      cpu: 1
+      memory: 4Gi
+  osd:
+    requests:
+      cpu: 2
+      memory: 5Gi
+    pvc:
+      storage: 2Ti
+      storageClassName: gp2
+  storageClass:
+    name: ocs-storagecluster-ceph-rgw
+    region: us-east-1
+    objectStoreName: ocs-storagecluster-cephobjectstore
+
+objectStore:
+  user: xraylab-1
+  displayName: "XRaylab-1 RGW OCS User"
+
+toolbox:
+  name: ocsinit
+  enableCephTools: true
+
+rbac:
+  createRBAC: true
+  createRoleBinding: true
+  roles:
+  - name: odf-user-mgmt
+    clusterRole: false
+    clusterRoleBinding: false
+    namespace: opesnhift-storage
+    apiGroups:
+    resources: secrets
+    verbs:
+    - '"get"'
+    - '"list"'
+    - '"watch"'
+    binding:
+      roleRef:
+        kind: Role
+      subjects:
+        kind: ServiceAccount
+        namespace: xraylab-1
+        name: xraylab-sa
+  - name: xraylab-mgmt
+    clusterRole: false
+    clusterRoleBinding: false
+    namespace: xraylab-1
+    apiGroups: 
+    resources: secrets
+    verbs:
+    - '"get"'
+    - '"list"'
+    - '"watch"'
+    - '"create"'
+    - '"update"'
+    - '"patch"'
+    binding:
+      kind: Role
+      subjects:
+        kind: ServiceAccount
+        namespace: xraylab-1
+        name: xraylab-sa
+  serviceAccount: 
+    name: xraylab-sa
+    namespace: xraylab-1
+
+job:
+  name: odf-user-key-export
+  namespace: xraylab-1
+  image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+  serviceAccount: xraylab-sa
+  serviceAccountName: xraylab-sa

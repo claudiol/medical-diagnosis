@@ -1,0 +1,18 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: {{ .Values.odf.route.name }}
+  namespace: {{ .Values.odf.namespace }}
+  labels:
+{{- include "odf.labels" . | nindent 4 }}
+spec:
+  to:
+    kind: {{ .Values.odf.route.kind }}
+    name: {{ .Values.odf.route.serviceName }}
+    weight: {{ .Values.odf.route.weight }}
+  port:
+    targetPort: {{ .Values.odf.route.port.targetPort }}
+  tls:
+    termination: {{ .Values.odf.route.tls.termination }}
+    insecureEdgeTerminationPolicy: Allow
+  wildcardPolicy: None
