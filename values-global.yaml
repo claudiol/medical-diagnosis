@@ -8,10 +8,14 @@ global:
   # XRay configuration for service-point config map
   # Found in charts/datacenter/xraylab/templates
   #   datacenter:
+  #     provider: <cloud_name> | aws | azure
+  #     storageClassName: <storageClassname> | gp2 | managed-premium
   #     clustername: <cluster-name>
   #     domain: <domain>
 
   datacenter:
+    provider: aws
+    storageClassName: gp2
     region: us-east-2
     clustername: jrickard-xray49
     domain: blueprints.rhecoeng.com
