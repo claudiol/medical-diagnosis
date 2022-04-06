@@ -1,7 +1,7 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: {{ .Values.global.datacenter.storageClassName }}
+  name: {{ .Values.odf.storageClass.name }}
   annotations:
     description: Provides Object Bucket Claims (OBCs) using the RGW
 provisioner: openshift-storage.ceph.rook.io/bucket
