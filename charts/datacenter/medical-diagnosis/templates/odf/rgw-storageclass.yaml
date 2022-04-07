@@ -4,6 +4,7 @@ metadata:
   name: {{ .Values.odf.storageClass.name }}
   annotations:
     description: Provides Object Bucket Claims (OBCs) using the RGW
+    argocd.argoproj.io/sync-wave: "3"
 provisioner: openshift-storage.ceph.rook.io/bucket
 parameters:
   objectStoreName: {{ .Values.odf.storageClass.objectStoreName }}
@@ -11,4 +12,3 @@ parameters:
   region: {{ .Values.global.datacenter.region }}
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
-
