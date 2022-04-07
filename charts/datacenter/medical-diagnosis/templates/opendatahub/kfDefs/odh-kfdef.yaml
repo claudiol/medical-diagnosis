@@ -3,6 +3,7 @@ kind: KfDef
 metadata:
   annotations:
     kfctl.kubeflow.io/force-delete: 'false'
+    argocd.argoproj.io/sync-wave: "2"
   name: opendatahub
   namespace: opendatahub
 spec:

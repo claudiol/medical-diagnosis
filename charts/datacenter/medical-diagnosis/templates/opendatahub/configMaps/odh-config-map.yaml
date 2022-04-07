@@ -5,6 +5,8 @@ metadata:
   namespace: opendatahub
   labels:
     jupyterhub: singleuser-profiles
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 data:
   jupyterhub-singleuser-profiles.yaml: |-
     profiles:
