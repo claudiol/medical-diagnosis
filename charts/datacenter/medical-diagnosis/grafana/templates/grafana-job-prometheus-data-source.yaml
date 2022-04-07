@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: create-prometheus-datasource-object
-  namespace: {{ .Values.global.pattern.namespace }}
+  namespace: {{ .Values.global.xraylab.namespace }}
   annotations:
     argocd.argoproj.io/sync-wave: "6"
 spec:
@@ -22,7 +22,7 @@ spec:
            kind: GrafanaDataSource
            metadata:
              name: prometheus-grafana-datasource
-             namespace: {{ .Values.global.pattern.namespace }}
+             namespace: {{ .Values.global.xraylab.namespace }}
            spec:
              datasources:
                - basicAuthUser: internal
