@@ -14,7 +14,7 @@ spec:
         - /bin/bash
         - -c
         - |
-{{- include "odf.labelNodes" . | nindent 10 }}
+{{- include "odf.nodeLabels" . | nindent 10 }}
         name: label-odf-nodes
       dnsPolicy: ClusterFirst
       restartPolicy: Never
