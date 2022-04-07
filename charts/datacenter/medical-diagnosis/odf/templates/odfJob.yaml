@@ -3,7 +3,6 @@ kind: Job
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "9"
-    argocd.argoproj.io/hook: PostSync
   name: {{ .Values.job.name }}
   namespace: {{ .Values.job.namespace }}
 spec:
