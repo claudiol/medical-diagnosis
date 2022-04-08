@@ -1,6 +1,9 @@
 #OpenShift Data Foundation - Cluster Storage
 odf:
   namespace: openshift-storage
+  serviceUrl: "http://rook-ceph-rgw-ocs-storagecluster-cephobjectstore.openshift-storage.svc.cluster.local"
+  externalUrl: "https://s3-rgw-openshift-storage"
+  targetBucket: com.redhat.jrickard.xray-source
   route:
     name: s3-rgw
     kind: Service
