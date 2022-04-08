@@ -4,7 +4,7 @@ metadata:
   name: xraylab-grafana
   namespace: {{ .Values.global.xraylab.namespace }}
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   ingress:
     enabled: true

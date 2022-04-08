@@ -3,6 +3,8 @@ apiVersion: apps.openshift.io/v1
 metadata:
   name: image-generator
   namespace: "{{ .Values.global.xraylab.namespace }}"
+  annotations:
+    argocd.argoproj.io/sync-wave: "9"
 spec:
   triggers:
     - type: ImageChange
