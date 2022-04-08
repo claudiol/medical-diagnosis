@@ -8,9 +8,9 @@ kind: {{ .kind }}
 metadata:
   annotations:
 {{- if eq .kind "KnativeKafka" }}
-    argocd.argoproj.io/sync-wave: "9"
+    argocd.argoproj.io/sync-wave: "3"
 {{- else }}
-    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-wave: "1"
 {{- end }}
   name: {{ .name }}
   namespace: {{ .namespace }}
