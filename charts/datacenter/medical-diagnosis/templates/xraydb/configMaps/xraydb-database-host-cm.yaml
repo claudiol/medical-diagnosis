@@ -6,4 +6,4 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 data:
-  url: {{ .Values.database.url }}
+  url: {{ .Values.xraydb.database.url }}
