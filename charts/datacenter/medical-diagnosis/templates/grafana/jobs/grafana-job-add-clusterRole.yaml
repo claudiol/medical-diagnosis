@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: create-prometheus-datasource-object
+  namespace: {{ .Values.global.xraylab.namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "6"
+spec:
+  template:
+    spec:
+      containers: 
+      - image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+        command:
+        - /bin/bash
+        - -c
+        - oc adm policy add-cluster-role-to-user cluster-monitoring-view -z grafana-serviceaccount -n {{ .Values.global.xraylab.namespace }}
