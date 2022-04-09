@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.odf.storageClass.name }}
   annotations:
     description: Provides Object Bucket Claims (OBCs) using the RGW
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "1"
 provisioner: openshift-storage.ceph.rook.io/bucket
 parameters:
   objectStoreName: {{ .Values.odf.storageClass.objectStoreName }}

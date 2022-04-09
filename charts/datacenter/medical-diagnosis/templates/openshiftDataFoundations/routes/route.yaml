@@ -3,6 +3,8 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: {{ .Values.odf.route.name }}
   namespace: {{ .Values.odf.namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
 {{- include "odf.labels" . | nindent 4 }}
 spec:

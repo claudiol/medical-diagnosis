@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.objectStore.user }}
   namespace: {{ .Values.odf.namespace }}
   annotations:
-    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   store: {{ .Values.odf.storageClass.objectStoreName }}
   displayName: {{ .Values.objectStore.displayName }}

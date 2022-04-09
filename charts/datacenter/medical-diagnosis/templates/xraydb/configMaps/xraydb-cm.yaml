@@ -4,7 +4,7 @@ metadata:
   name: xraylabdb-init
   namespace: {{ .Values.global.xraylab.namespace }}
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
 data:
   90-init-data.sh: |
     init_database() {
