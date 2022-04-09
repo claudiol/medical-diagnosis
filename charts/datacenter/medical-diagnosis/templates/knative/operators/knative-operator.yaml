@@ -8,7 +8,7 @@ kind: {{ .kind }}
 metadata:
   annotations:
 {{- if eq .kind "KnativeKafka" }}
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/hook: PreSync
 {{- else }}
     argocd.argoproj.io/sync-wave: "0"
 {{- end }}
