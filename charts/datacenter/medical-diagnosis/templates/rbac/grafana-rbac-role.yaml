@@ -5,6 +5,7 @@ metadata:
   namespace: xraylab-1
   annotations:
     argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/hook: PreSync
 rules:
 - apiGroups: ["integreatly.org"]
   resources: ["grafanadatasources"]
