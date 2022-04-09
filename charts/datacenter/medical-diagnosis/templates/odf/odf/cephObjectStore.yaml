@@ -4,7 +4,7 @@ metadata:
   name: ocs-storagecluster-cephobjectstore
   namespace: openshift-storage
   annotations:
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   dataPool:
     crushRoot: ""

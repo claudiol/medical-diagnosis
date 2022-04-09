@@ -4,7 +4,7 @@ metadata:
   namespace: {{ .Values.odf.namespace }}
   name: ocs-storagecluster
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   manageNodes: false
   resources:
