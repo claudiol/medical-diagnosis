@@ -48,7 +48,6 @@ clusterGroup:
     source: community-operators
     csv: opendatahub-operator.v1.1.0
 
-
   projects:
   - datacenter
   #- vault
@@ -58,57 +57,57 @@ clusterGroup:
     namespace: open-cluster-management
     project: datacenter
     path: common/acm
+  
+  - name: odf
+    namespace: openshift-storage
+    project: datacenter
+    path: charts/datacenter/medical-diagnosis/odf
 
   - name: odh
     namespace: opendatahub
     project: datacenter
     path: charts/datacenter/medical-diagnosis/opendatahub
 
-  - name: cephobjectstore
-    namespace: openshift-storage
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/odf
-
-  - name: knative
+  - name: openshift-serverless
     namespace: xraylab-1
     project: datacenter
     path: charts/datacenter/medical-diagnosis/knative
 
-  - name: demo
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/demo
-
-  - name: user
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/user
-    
-  - name: kafka
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/kafka
-
-  - name:  grafana
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/grafana
-
-  - name:  imageserver
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/image-server
-
-  - name:  imagegenerator
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/image-generator
-    
-  - name: xraydb
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/xraydb
-#  
+#  - name: demo
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/demo
+#
+#  - name: user
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/user
+#    
+#  - name: kafka
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/kafka
+#
+#  - name:  grafana
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/grafana
+#
+#  - name:  imageserver
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/image-server
+#
+#  - name:  imagegenerator
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/image-generator
+#    
+#  - name: xraydb
+#    namespace: xraylab-1
+#    project: datacenter
+#    path: charts/datacenter/medical-diagnosis/xraydb
+##  
 #  - name: vault
 #    namespace: vault
 #    project: datacenter
