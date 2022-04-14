@@ -6,6 +6,8 @@ kind: Application
 metadata:
   name: {{ .name }}
   namespace: {{ $namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: {{ quote $c |}}
 spec:
   destination:
     name: in-cluster
