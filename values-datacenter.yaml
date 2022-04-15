@@ -25,7 +25,6 @@ clusterGroup:
 
   - name: amq-streams
     namespace: xraylab-1 
-    #channel: amq-streams-1.7.x
     channel: stable
     csv: amqstreams.v1.7.1
 
@@ -73,41 +72,36 @@ clusterGroup:
     project: datacenter
     path: charts/datacenter/medical-diagnosis/knative
 
-#  - name: demo
-#    namespace: xraylab-1
-#    project: datacenter
-#    path: charts/datacenter/medical-diagnosis/demo
+  - name:  grafana
+    namespace: xraylab-1
+    project: datacenter
+    path: charts/datacenter/medical-diagnosis/grafana
+
+  - name: demo
+    namespace: xraylab-1
+    project: datacenter
+    path: charts/datacenter/medical-diagnosis/demo
+
+  - name: xraydb
+    namespace: xraylab-1
+    project: datacenter
+    path: charts/datacenter/medical-diagnosis/xraydb
+      
+  - name: kafka
+    namespace: xraylab-1
+    project: datacenter
+    path: charts/datacenter/medical-diagnosis/kafka
 #
-#  - name: user
-#    namespace: xraylab-1
-#    project: datacenter
-#    path: charts/datacenter/medical-diagnosis/user
-#    
-#  - name: kafka
-#    namespace: xraylab-1
-#    project: datacenter
-#    path: charts/datacenter/medical-diagnosis/kafka
+  - name:  imageserver
+    namespace: xraylab-1
+    project: datacenter
+    path: charts/datacenter/medical-diagnosis/image-server
 #
-#  - name:  grafana
-#    namespace: xraylab-1
-#    project: datacenter
-#    path: charts/datacenter/medical-diagnosis/grafana
-#
-#  - name:  imageserver
-#    namespace: xraylab-1
-#    project: datacenter
-#    path: charts/datacenter/medical-diagnosis/image-server
-#
-#  - name:  imagegenerator
-#    namespace: xraylab-1
-#    project: datacenter
-#    path: charts/datacenter/medical-diagnosis/image-generator
-#    
-#  - name: xraydb
-#    namespace: xraylab-1
-#    project: datacenter
-#    path: charts/datacenter/medical-diagnosis/xraydb
-##  
+  - name:  imagegenerator
+    namespace: xraylab-1
+    project: datacenter
+    path: charts/datacenter/medical-diagnosis/image-generator
+
 #  - name: vault
 #    namespace: vault
 #    project: datacenter
