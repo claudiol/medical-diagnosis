@@ -3,6 +3,8 @@ apiVersion: batch/v1
 metadata:
   name: demo-user-init
   namespace: '{{ .Values.global.xraylab.namespace }}'
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   selector: {}
   template:
