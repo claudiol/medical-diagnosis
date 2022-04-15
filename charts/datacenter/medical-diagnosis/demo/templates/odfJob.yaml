@@ -14,7 +14,7 @@ spec:
         - /bin/bash
         - -c
         - |
-{{- include "odf.jobs" . | nindent 10 }}
+{{- include "demo.jobs" . | nindent 10 }}
         name: {{ .Values.job.name }}
       dnsPolicy: ClusterFirst
       restartPolicy: Never
