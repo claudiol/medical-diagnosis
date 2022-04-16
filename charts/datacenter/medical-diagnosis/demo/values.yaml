@@ -1,2 +1,8 @@
 kafkaSource:
   bootstrapserver: "xray-cluster-kafka-bootstrap.xraylab-1.svc:9092"
+
+job:
+  name: odf-user-key-export
+  image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+  serviceAccount: xraylab-sa
+  serviceAccountName: xraylab-sa
