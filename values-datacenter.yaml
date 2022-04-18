@@ -62,46 +62,46 @@ clusterGroup:
     project: datacenter
     path: charts/datacenter/medical-diagnosis/odf
 
-  - name: odh
-    namespace: opendatahub
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/opendatahub
-
-  - name: openshift-serverless
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/knative
-
-  - name:  grafana
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/grafana
-
-  - name: demo
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/demo
-
-  - name: xraydb
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/xraydb
-      
-  - name: kafka
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/kafka
-#
-  - name:  imageserver
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/image-server
-#
-  - name:  imagegenerator
-    namespace: xraylab-1
-    project: datacenter
-    path: charts/datacenter/medical-diagnosis/image-generator
-
+#jrickard  - name: odh
+#jrickard    namespace: opendatahub
+#jrickard    project: datacenter
+#jrickard    path: charts/datacenter/medical-diagnosis/opendatahub
+#jrickard
+#jrickard  - name: openshift-serverless
+#jrickard    namespace: xraylab-1
+#jrickard    project: datacenter
+#jrickard    path: charts/datacenter/medical-diagnosis/knative
+#jrickard
+#jrickard  - name:  grafana
+#jrickard    namespace: xraylab-1
+#jrickard    project: datacenter
+#jrickard    path: charts/datacenter/medical-diagnosis/grafana
+#jrickard
+#jrickard  - name: demo
+#jrickard    namespace: xraylab-1
+#jrickard    project: datacenter
+#jrickard    path: charts/datacenter/medical-diagnosis/demo
+#jrickard
+#jrickard  - name: xraydb
+#jrickard    namespace: xraylab-1
+#jrickard    project: datacenter
+#jrickard    path: charts/datacenter/medical-diagnosis/xraydb
+#jrickard      
+#jrickard  - name: kafka
+#jrickard    namespace: xraylab-1
+#jrickard    project: datacenter
+#jrickard    path: charts/datacenter/medical-diagnosis/kafka
+#jrickard#
+#jrickard  - name:  imageserver
+#jrickard    namespace: xraylab-1
+#jrickard    project: datacenter
+#jrickard    path: charts/datacenter/medical-diagnosis/image-server
+#jrickard#
+#jrickard  - name:  imagegenerator
+#jrickard    namespace: xraylab-1
+#jrickard    project: datacenter
+#jrickard    path: charts/datacenter/medical-diagnosis/image-generator
+#jrickard
 #  - name: vault
 #    namespace: vault
 #    project: datacenter
