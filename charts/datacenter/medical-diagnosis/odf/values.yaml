@@ -62,8 +62,7 @@ rbac:
     - '"list"'
     - '"watch"'
     binding:
-      roleRef:
-        kind: Role
+      kind: Role
       subjects:
         kind: ServiceAccount
         namespace: xraylab-1
