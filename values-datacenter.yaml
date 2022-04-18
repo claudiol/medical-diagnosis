@@ -67,7 +67,7 @@ clusterGroup:
     project: datacenter
     path: charts/datacenter/medical-diagnosis/opendatahub
 
-  - name: objectstore-USER
+  - name: objectstore-user
     namespace: openshift-storage
     project: datacenter
     path: charts/datacenter/medical-diagnosis/objectStoreUser
