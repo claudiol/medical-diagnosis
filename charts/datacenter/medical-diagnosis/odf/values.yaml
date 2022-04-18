@@ -54,7 +54,7 @@ rbac:
   - name: odf-user-mgmt
     clusterRole: false
     clusterRoleBinding: false
-    namespace: opesnhift-storage
+    namespace: openshift-storage
     apiGroups:
     resources: secrets
     verbs:
