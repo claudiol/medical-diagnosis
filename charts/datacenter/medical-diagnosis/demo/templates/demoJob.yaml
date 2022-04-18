@@ -8,6 +8,14 @@ metadata:
 spec:
   template:
     spec:
+      initContainers:
+      - name: validate-cephobjectstoreuser-is-available
+        image: {{ .Values.job.image. }}
+        command:
+        - /bin/bash
+        - -c
+        - |
+{{- include "demo.initJob" . | nindent 10 }}
       containers: 
       - image: {{ .Values.job.image }}
         command:
