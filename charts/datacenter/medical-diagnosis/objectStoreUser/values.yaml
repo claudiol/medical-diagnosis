@@ -1,0 +1,10 @@
+
+objectStore:
+  user: 
+    name: xraylab-1
+    displayName: "XRaylab-1 RGW OCS User"
+  name: ocs-storagecluster-cephobjectstore
+  namespace: openshift-storage
+
+job:
+  image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
