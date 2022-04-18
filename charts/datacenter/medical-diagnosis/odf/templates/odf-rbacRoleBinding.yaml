@@ -20,3 +20,4 @@ subjects:
   namespace: {{ .binding.subjects.namespace }}
 {{- end }}
 {{- end }}
+---

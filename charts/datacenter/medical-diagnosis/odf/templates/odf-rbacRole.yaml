@@ -16,4 +16,4 @@ rules:
   verbs: [{{ join ", " .verbs }}]
 {{- end }}
 {{- end }}
-
+---
