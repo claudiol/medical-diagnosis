@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       initContainers:
-      - name: validate-cephobjectstoreuser-is-available
+      - name: init-cephobjectstoreuser
         image: {{ .Values.job.image }}
         command:
         - /bin/bash
