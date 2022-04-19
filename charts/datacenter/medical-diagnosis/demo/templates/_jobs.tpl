@@ -9,6 +9,7 @@ RC=1
 while [ ${RC} -eq 1 ]
 do
  echo "Waiting for cephObjectStoreUser creation"
+ oc get cephobjectstoreuser/xraylab-1 -n openshift-storage
  RC=$?
 done
 {{- end -}}
