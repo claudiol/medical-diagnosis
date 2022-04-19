@@ -4,7 +4,7 @@ metadata:
   name: demo-user-init
   namespace: '{{ .Values.global.xraylab.namespace }}'
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "15"
 spec:
   selector: {}
   template:
