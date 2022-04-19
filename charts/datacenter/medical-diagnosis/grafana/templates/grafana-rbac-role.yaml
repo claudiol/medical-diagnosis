@@ -4,7 +4,7 @@ metadata:
   name: grafana-project-mgr
   namespace: xraylab-1
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/hook: PreSync
 rules:
 - apiGroups: ["integreatly.org"]
   resources: ["grafanadatasources"]
