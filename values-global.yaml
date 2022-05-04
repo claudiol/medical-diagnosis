@@ -12,6 +12,8 @@ global:
   #     domain: <domain>
 
   datacenter:
+    cloudProvider: PROVIDE_CLOUD_PROVIDER #aws, azure
+    storageClassName: PROVIDE_DEFAULT_STORAGE_CLASS #aws=gp2, azure=
     region: PROVIDE_CLOUD_REGION #us-east-1
     clustername: PROVIDE_CLUSTER_NAME #OpenShift clusterName
     domain: PROVIDE_DNS_DOMAIN #blueprints.rhecoeng.com
