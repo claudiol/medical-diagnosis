@@ -8,15 +8,18 @@ global:
   # XRay configuration for service-point config map
   # Found in charts/datacenter/xraylab/templates
   #   datacenter:
+  #     cloudProvider: <aws,azure,gcp>
+  #     storageClassName: <gp2>
+  #     region: <us-east-1>
   #     clustername: <cluster-name>
   #     domain: <domain>
 
   datacenter:
-    cloudProvider: aws
-    storageClassName: gp2
-    region: us-east-2
-    clustername: jrickard-xray
-    domain: blueprints.rhecoeng.com
+    cloudProvider: PROVIDE_CLOUD_PROVIDER
+    storageClassName: PROVIDE_STORAGE_CLASS
+    region: PROVIDE_REGION
+    clustername: PROVIDE_CLUSTERNAME
+    domain: PROVIDE_DNS_DOMAIN
 
   xraylab:
     namespace: "xraylab-1"
@@ -26,7 +29,7 @@ global:
       # Replace <region> with AWS region where S3 bucket was created
       # Replace <cluster-name> and <domain> with your OpenShift cluster values
       # bucketSource: "https://s3.<region>.amazonaws.com/com.redhat.claudiol.xray-source"
-      bucketSource: "https://s3.us-east-2.amazonaws.com/com.redhat.jrickard.xray-source"
+      bucketSource: PROVIDE_S3_BUCKETSOURCE
       # Bucket base name used for xray images
       bucketBaseName: "xraylab-1"
 
