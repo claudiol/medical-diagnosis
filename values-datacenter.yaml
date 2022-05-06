@@ -70,7 +70,7 @@ clusterGroup:
   - name: odf
     namespace: openshift-storage
     project: datacenter
-    path: charts/datacenter/openshiftDataFoundations
+    path: charts/datacenter/cephobjectstore
 
   - name: knative
     namespace: xraylab-1
