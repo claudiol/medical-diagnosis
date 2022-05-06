@@ -34,10 +34,10 @@ clusterGroup:
     source: community-operators
     csv: grafana-operator.v3.10.3
 
-  - name: ocs-operator
+  - name: odf-operator
     namespace: openshift-storage
-    channel: stable-4.9
-    csv: ocs-operator.v4.8.7
+    channel: stable-4.10
+    csv: odf-operator.v4.9.4
 
   - name: serverless-operator
     channel: stable
@@ -62,10 +62,15 @@ clusterGroup:
     project: datacenter
     path: charts/datacenter/opendatahub
 
-  - name: cephobjectstore
+#  - name: cephobjectstore
+#    namespace: openshift-storage
+#    project: datacenter
+#    path: charts/datacenter/cephobjectstore
+
+  - name: odf
     namespace: openshift-storage
     project: datacenter
-    path: charts/datacenter/cephobjectstore
+    path: charts/datacenter/openshiftDataFoundations
 
   - name: knative
     namespace: xraylab-1
