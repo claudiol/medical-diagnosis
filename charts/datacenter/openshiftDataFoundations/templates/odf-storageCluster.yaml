@@ -19,7 +19,7 @@ spec:
     cephBlockPools: {}
     cephConfig: {}
     cephDashboard: {}
-    cephFileSystems: {}
+    cephFilesystems: {}
     cephObjectStoreUsers: {}
     cephObjectStores: {}
   multiCloudGateway:
