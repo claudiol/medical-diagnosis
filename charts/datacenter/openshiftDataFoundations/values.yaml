@@ -1,0 +1,46 @@
+#Including global values in case of high level overrides
+global:
+  datacenter:
+    storageClassName: ""
+
+#Define noobaa requests/limits 
+odf:
+  storageCluster:
+    name: ocs-storagecluster
+  namespace: openshift-storage
+  noobaacore:
+    limits:
+      cpu: 1
+      memory: 4Gi
+    requests:
+      cpu: 1
+      memory: 4Gi
+  noobaadb:
+    limits: 
+      cpu: 1
+      memory: 4Gi
+    requests:
+      cpu: 1
+      memory: 4Gi
+
+#Define the odf storageSystem parameters
+storageSystem:
+  name: ocs-storagecluster-storagesystem
+  namespace: openshift-storage
+  spec:
+    kind: storagecluster.ocs.openshift.io/v1
+    name: ocs-storagecluster
+    namespace: ""
+
+
+#Define the odf cephObjectStore parameters
+cephObjectStore:
+  name: odf-storagecluster-cephobjectstore
+  namespace: openshift-storage
+  spec:
+    dataPool:
+      failureDomain: zone
+      replicated:
+        size: 3
+    gateway:
+      instances: 2

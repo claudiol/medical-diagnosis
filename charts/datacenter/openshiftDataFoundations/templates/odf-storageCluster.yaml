@@ -1,0 +1,43 @@
+apiVersion: ocs.openshift.io/v1
+kind: StorageCluster
+metadata:
+  annotations:
+    uninstall.ocs.openshift.io/cleanup-policy: delete
+    uninstall.ocs.openshift.io/mode: graceful
+    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  finalizers:
+  - storagecluster.ocs.openshift.io
+  name: {{ .Values.odf.storageCluster.name }}
+  namespace: {{ .Values.odf.namespace }}
+spec:
+  arbiter: {}
+  encryption:
+    kms: {}
+  externalStorage: {}
+  managedResources: 
+    cephBlockPools: {}
+    cephConfig: {}
+    cephDashboard: {}
+    cephFileSystems: {}
+    cephObjectStoreUsers: {}
+    cephObjectStores: {}
+  multiCloudGateway:
+    dbStorageClassName: {{ .Values.global.datacenter.storageClassName }}
+    reconcileStrategy: standalone
+  resources:
+    noobaa-core:
+      limits:
+        cpu: {{ .Values.odf.noobaacore.limits.cpu }}
+        memory: {{ .Values.odf.noobaacore.limits.memory }}
+      requests:
+        cpu: {{ .Values.odf.noobaacore.requests.cpu }}
+        memory: {{ .Values.odf.noobaacore.requests.memory }}
+    noobaa-db:
+      limits:
+        cpu: {{ .Values.odf.noobaadb.limits.cpu }}
+        memory: {{ .Values.odf.noobaadb.limits.memory }}
+      requests:
+        cpu: {{ .Values.odf.noobaadb.requests.cpu }}
+        memory: {{ .Values.odf.noobaadb.requests.memory }}
+
