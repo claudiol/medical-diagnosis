@@ -44,3 +44,7 @@ cephObjectStore:
         size: 3
     gateway:
       instances: 2
+
+toolbox:
+  name: ocsinit
+  enableCephTools: True
