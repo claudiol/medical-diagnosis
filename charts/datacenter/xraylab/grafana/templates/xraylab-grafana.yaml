@@ -4,6 +4,7 @@ metadata:
   name: xraylab-grafana
   namespace: {{ .Values.global.xraylab.namespace }}
 spec:
+  service: {}
   ingress:
     enabled: true
   config:
