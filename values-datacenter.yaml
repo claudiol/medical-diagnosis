@@ -34,10 +34,10 @@ clusterGroup:
     source: community-operators
     csv: grafana-operator.v3.10.3
 
-  - name: ocs-operator
+  - name: odf-operator
     namespace: openshift-storage
     channel: stable-4.9
-    csv: ocs-operator.v4.9.6
+    csv: odf-operator.v4.9.6
 
   - name: serverless-operator
     channel: stable
