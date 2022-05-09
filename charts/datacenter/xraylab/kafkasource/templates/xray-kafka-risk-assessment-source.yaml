@@ -8,6 +8,17 @@ metadata:
     argocd.argoproj.io/sync-wave: "10"
 spec:
   consumerGroup: {{ .Values.kafkaSource.consumerGroup }}
+  consumers: 1
+  initialOffset: latest
+  net:
+    sasl:
+      password: {}
+      type: {}
+      user: {}
+    tls:
+      caCert: {}
+      cert: {}
+      key: {}
   bootstrapServers:
     - {{ .Values.kafkaSource.bootstrapserver }}
   topics:
@@ -17,3 +28,4 @@ spec:
       apiVersion: serving.knative.dev/v1
       kind: Service
       name: {{ .Values.kafkaSource.consumerGroup }}
+      namespace: {{ .Values.global.xraylab.namespace }}
