@@ -13,8 +13,6 @@ spec:
           path: odh-common
       name: odh-common
     - kustomizeConfig:
-        overlays:
-        - storage-class:
         parameters:
           - name: storage_class
             value: ocs-storagecluster-ceph-rbd
@@ -37,8 +35,7 @@ spec:
           path: odh-dashboard
       name: odh-dashboard
   repos:
-    - name: kf-manifests
-      uri: >-
-        https://github.com/opendatahub-io/manifests/tarball/v1.2-branch
-    - name: manifests
-      uri: 'https://github.com/opendatahub-io/odh-manifests/tarball/v1.1.0'
+{{- range .Values.kubeflow.repos }}
+    - name: {{ .name }}
+      uri: {{ .uri }}
+{{- end }}
