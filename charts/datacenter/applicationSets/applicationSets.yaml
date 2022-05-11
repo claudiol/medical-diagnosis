@@ -1,0 +1,30 @@
+{{- $namespace := cat $.Values.global.pattern $.Values.clusterGroup.name | replace " " "-" }}
+{{- range .Values.clusterGroup.applications }}
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: {{ .name }}
+  namespace: $namespace
+spec:
+  generators:
+  - git:
+      repoURL: {{ coalesce .repoURL $.Values.global.repoURL }}
+      revision: {{ coalesce .targetRevision $.Values.global.targetRevision }}
+      directories:
+      - path: applicationsets/git-dir-generator/apps/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      source:
+        repoURL: https://github.com/christianh814/gitops-examples
+        targetRevision: master
+        path: '{{path}}'
+      destination:
+        server: https://api.cluster1.chx.osecloud.com:6443
+        namespace: pricelist
