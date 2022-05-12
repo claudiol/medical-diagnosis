@@ -34,18 +34,18 @@ clusterGroup:
 ##    source: community-operators
 ##    csv: grafana-operator.v3.10.3
 ##
- - name: ocs-operator
-   namespace: openshift-storage
-   channel: stable-4.8
-   csv: ocs-operator.v4.8.7
-
- - name: serverless-operator
-   channel: stable
-   csv: serverless-operator.v1.7.2
-
- - name: opendatahub-operator
-   source: community-operators
-   csv: opendatahub-operator.v1.1.0
+  - name: ocs-operator
+    namespace: openshift-storage
+    channel: stable-4.8
+    csv: ocs-operator.v4.8.7
+ 
+  - name: serverless-operator
+    channel: stable
+    csv: serverless-operator.v1.7.2
+ 
+  - name: opendatahub-operator
+    source: community-operators
+    csv: opendatahub-operator.v1.1.0
 
 
   projects:
