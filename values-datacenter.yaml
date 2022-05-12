@@ -86,6 +86,12 @@ clusterGroup:
       namespace: xraylab-1
       project: datacenter
       path: charts/datacenter/kafdrop
+
+    objectstoreuser:
+      name: objectstoreuser
+      namespace: xraylab-1
+      project: datacenter
+      path: charts/datacenter/objectStoreUser  
     
     vp-init:
       name: vp-init
