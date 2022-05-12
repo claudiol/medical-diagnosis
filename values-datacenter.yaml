@@ -51,31 +51,49 @@ clusterGroup:
   projects:
   - datacenter
  
-##  applications:
-##    acm:
-##      name: acm
-##      namespace: open-cluster-management
-##      project: datacenter
-##      path: common/acm
-##
-##    odh:
-##      name: odh
-##      namespace: opendatahub
-##      project: datacenter
-##      path: charts/datacenter/opendatahub
-##
-##    cephobjectstore:
-##      name: cephobjectstore
-##      namespace: openshift-storage
-##      project: datacenter
-##      path: charts/datacenter/cephobjectstore
-##
-##    knative:
-##      name: knative
-##      namespace: xraylab-1
-##      project: datacenter
-##      path: charts/datacenter/xraylab/knative
-##
+  applications:
+    acm:
+      name: acm
+      namespace: open-cluster-management
+      project: datacenter
+      path: common/acm
+
+    odh:
+      name: odh
+      namespace: opendatahub
+      project: datacenter
+      path: charts/datacenter/opendatahub
+
+    cephobjectstore:
+      name: odf
+      namespace: openshift-storage
+      project: datacenter
+      path: charts/datacenter/openshiftDataFoundations
+
+    knative:
+      name: serverless
+      namespace: xraylab-1
+      project: datacenter
+      path: charts/datacenter/openshiftServerless
+
+    kafka:
+      name: kafka
+      namespace: xraylab-1
+      project: datacenter
+      path: charts/datacenter/kafka
+    
+    kafdrop:
+      name: kafdrop
+      namespace: xraylab-1
+      project: datacenter
+      path: charts/datacenter/kafdrop
+    
+    vp-init:
+      name: vp-init
+      namespace: openshift-gitops
+      project: datacenter
+      path: charts/datacenter/vp-init
+
 ##    demo:
 ##      name: demo
 ##      namespace: xraylab-1
@@ -87,12 +105,6 @@ clusterGroup:
 ##      namespace: xraylab-1
 ##      project: datacenter
 ##      path: charts/datacenter/xraylab/user
-##
-##    kafka:
-##      name: kafka
-##      namespace: xraylab-1
-##      project: datacenter
-##      path: charts/datacenter/xraylab/kafka
 ##
 ##    kafkasource:
 ##      name: kafkasource
