@@ -17,133 +17,133 @@ clusterGroup:
     - operatorhub
     - knative-kafka
 
-  subscriptions:
-  - name: advanced-cluster-management
-    namespace: open-cluster-management
-    channel: release-2.3
-    csv: advanced-cluster-management.v2.3.2
-
-  - name: amq-streams
-    namespace: xraylab-1 
-    channel: stable
-    csv: amqstreams.v1.7.1
-
-  - name: grafana-operator
-    namespace: xraylab-1 
-    channel: v4
-    source: community-operators
-    csv: grafana-operator.v3.10.3
-
-  - name: ocs-operator
-    namespace: openshift-storage
-    channel: stable-4.8
-    csv: ocs-operator.v4.8.7
-
-  - name: serverless-operator
-    channel: stable
-    csv: serverless-operator.v1.7.2
-
-  - name: opendatahub-operator
-    source: community-operators
-    csv: opendatahub-operator.v1.1.0
+##  subscriptions:
+##  - name: advanced-cluster-management
+##    namespace: open-cluster-management
+##    channel: release-2.3
+##    csv: advanced-cluster-management.v2.3.2
+##
+##  - name: amq-streams
+##    namespace: xraylab-1 
+##    channel: stable
+##    csv: amqstreams.v1.7.1
+##
+##  - name: grafana-operator
+##    namespace: xraylab-1 
+##    channel: v4
+##    source: community-operators
+##    csv: grafana-operator.v3.10.3
+##
+##  - name: ocs-operator
+##    namespace: openshift-storage
+##    channel: stable-4.8
+##    csv: ocs-operator.v4.8.7
+##
+##  - name: serverless-operator
+##    channel: stable
+##    csv: serverless-operator.v1.7.2
+##
+##  - name: opendatahub-operator
+##    source: community-operators
+##    csv: opendatahub-operator.v1.1.0
 
 
   projects:
   - datacenter
  
-  applications:
-    acm:
-      name: acm
-      namespace: open-cluster-management
-      project: datacenter
-      path: common/acm
-
-    odh:
-      name: odh
-      namespace: opendatahub
-      project: datacenter
-      path: charts/datacenter/opendatahub
-
-    cephobjectstore:
-      name: cephobjectstore
-      namespace: openshift-storage
-      project: datacenter
-      path: charts/datacenter/cephobjectstore
-
-    knative:
-      name: knative
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/knative
-
-    demo:
-      name: demo
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/demo
-
-    user:
-      name: user
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/user
-
-    kafka:
-      name: kafka
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/kafka
-
-    kafkasource:
-      name: kafkasource
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/kafkasource
-
-    grafana:
-      name:  grafana
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/grafana
-
-    imageserver:
-      name: imageserver
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/image-server
-
-    imagegenerator:
-      name: imagegenerator
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/image-generator
-
-    xraydb:
-      name: xraydb
-      namespace: xraylab-1
-      project: datacenter
-      path: charts/datacenter/xraylab/xraydb
-
-    hashivault:
-      name: hashivault
-      namespace: vault
-      project: datacenter
-      chart: vault
-      repoURL: https://helm.releases.hashicorp.com
-      targetRevision: 0.17.1
-      overrides:
-      - name: build.enabled
-        value: "false"
-        forceString: true
-      - name: deploy.route.tls.enabled
-        value: "true"
-        forceString: true
-      - name: global.openshift
-        value: "true"
-        forceString: true
-      - name: server.dev.enabled
-        value: "true"
-        forceString: true
+##  applications:
+##    acm:
+##      name: acm
+##      namespace: open-cluster-management
+##      project: datacenter
+##      path: common/acm
+##
+##    odh:
+##      name: odh
+##      namespace: opendatahub
+##      project: datacenter
+##      path: charts/datacenter/opendatahub
+##
+##    cephobjectstore:
+##      name: cephobjectstore
+##      namespace: openshift-storage
+##      project: datacenter
+##      path: charts/datacenter/cephobjectstore
+##
+##    knative:
+##      name: knative
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/knative
+##
+##    demo:
+##      name: demo
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/demo
+##
+##    user:
+##      name: user
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/user
+##
+##    kafka:
+##      name: kafka
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/kafka
+##
+##    kafkasource:
+##      name: kafkasource
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/kafkasource
+##
+##    grafana:
+##      name:  grafana
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/grafana
+##
+##    imageserver:
+##      name: imageserver
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/image-server
+##
+##    imagegenerator:
+##      name: imagegenerator
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/image-generator
+##
+##    xraydb:
+##      name: xraydb
+##      namespace: xraylab-1
+##      project: datacenter
+##      path: charts/datacenter/xraylab/xraydb
+##
+##    hashivault:
+##      name: hashivault
+##      namespace: vault
+##      project: datacenter
+##      chart: vault
+##      repoURL: https://helm.releases.hashicorp.com
+##      targetRevision: 0.17.1
+##      overrides:
+##      - name: build.enabled
+##        value: "false"
+##        forceString: true
+##      - name: deploy.route.tls.enabled
+##        value: "true"
+##        forceString: true
+##      - name: global.openshift
+##        value: "true"
+##        forceString: true
+##      - name: server.dev.enabled
+##        value: "true"
+##        forceString: true
 
 #  To have apps in multiple flavors, use namespaces and use helm overrides as appropriate
 #
