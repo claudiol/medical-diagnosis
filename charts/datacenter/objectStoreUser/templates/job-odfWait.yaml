@@ -3,8 +3,8 @@ kind: Job
 metadata:
   annotations:
     argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
-  name: wait-for-odf-mon-a-deployment
+#    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+  name: wait-for-noobaa-deployment
   namespace: openshift-gitops
 spec:
   template:
@@ -15,9 +15,10 @@ spec:
         - /bin/bash
         - -c
         - |
-{{- include "objectStoreUser.waitForMONA" . | nindent 10 }}
-        name: mon-a-deployment-pause
+{{- include "objectStoreUser.waitForNoobaa" . | nindent 10 }}
+        name: noobaa-deployment-pause
       dnsPolicy: ClusterFirst
+      activeDeadlineSeconds: 900
       restartPolicy: Never
       serviceAccount: openshift-gitops-argocd-application-controller
       serviceAccountName: openshift-gitops-argocd-application-controller
