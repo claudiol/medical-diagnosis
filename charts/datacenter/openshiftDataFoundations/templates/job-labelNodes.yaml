@@ -2,8 +2,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/sync-wave: "-5"
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "-2"
   name: label-odf-nodes
   namespace: openshift-gitops
 spec:
@@ -15,7 +15,7 @@ spec:
         - /bin/bash
         - -c
         - |
-            oc label nodes -l node-role.kubernetes.io/worker= cluster.ocs.openshift.io/openshift-storage=
+            oc label nodes -l node-role.kubernetes.io/worker= cluster.ocs.openshift.io/openshift-storage=''
         name: label-odf-nodes
       dnsPolicy: ClusterFirst
       restartPolicy: Never
