@@ -93,11 +93,14 @@ clusterGroup:
       project: datacenter
       path: charts/datacenter/objectStoreUser  
     
-    vp-init:
-      name: vp-init
-      namespace: openshift-gitops
-      project: datacenter
-      path: charts/datacenter/vp-init
+#    vp-init:
+#      name: vp-init
+#      namespace: openshift-gitops
+#      project: datacenter
+#      path: charts/datacenter/vp-init
+#  applicationSets:
+#    medicalDiagnosis:
+      
 
 ##    demo:
 ##      name: demo
