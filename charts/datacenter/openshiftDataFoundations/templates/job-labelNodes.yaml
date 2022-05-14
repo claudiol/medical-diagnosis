@@ -15,7 +15,7 @@ spec:
         - /bin/bash
         - -c
         - |
-            oc label nodes -l node-role.kubernetes.io/worker= cluster.ocs.openshift.io/openshift-storage=''
+            oc label nodes -l node-role.kubernetes.io/worker= cluster.ocs.openshift.io/openshift-storage='' --overwrite
         name: label-odf-nodes
       dnsPolicy: ClusterFirst
       restartPolicy: Never
