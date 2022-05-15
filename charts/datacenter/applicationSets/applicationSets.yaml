@@ -1,30 +1,30 @@
-{{- $namespace := cat $.Values.global.pattern $.Values.clusterGroup.name | replace " " "-" }}
-{{- range .Values.clusterGroup.applications }}
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: {{ .name }}
-  namespace: $namespace
+  name: medical-diagnosis-appset
+  namespace: medical-diagnosis-datacenter
+  labels:
+    app: medical-diagnosis
 spec:
   generators:
   - git:
-      repoURL: {{ coalesce .repoURL $.Values.global.repoURL }}
-      revision: {{ coalesce .targetRevision $.Values.global.targetRevision }}
+      repoURL: https://github.com/hybrid-cloud-patterns/medical-diagnosis
+      revision: mbp-257-applicationsets
       directories:
-      - path: applicationsets/git-dir-generator/apps/*
+      - path: charts/datacenter/applicationsets/apps/*
   template:
     metadata:
       name: '{{path.basename}}'
     spec:
-      project: default
+      project: datacenter
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
       source:
-        repoURL: https://github.com/christianh814/gitops-examples
-        targetRevision: master
+        repoURL: https://github.com/hybrid-cloud-patterns/medical-diagnosis.git
+        targetRevision: mbp-257-applicationsets
         path: '{{path}}'
       destination:
-        server: https://api.cluster1.chx.osecloud.com:6443
-        namespace: pricelist
+        server: https://kubernetes.default.svc
+        namespace: xraylab-1
