@@ -37,7 +37,7 @@ clusterGroup:
   - name: odf-operator
     namespace: openshift-storage
     channel: stable-4.10
-    csv: odf-operator.v4.9.4
+    csv: odf-operator.v4.10.2
 
   - name: serverless-operator
     channel: stable
