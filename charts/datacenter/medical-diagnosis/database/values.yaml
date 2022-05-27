@@ -1,0 +1,20 @@
+global:
+  xraylab:
+    namespace: xraylab-1
+  datacenter:
+    storageClassName: gp2
+    region: us-east-1
+
+kafkaSource:
+  bootstrapserver: "xray-cluster-kafka-bootstrap.xraylab-1.svc:9092"
+
+rbac:
+  serviceAccount: get-deployment-sa
+  clusterRole:
+    name: get-deployment-role
+  clusterRoleBinding:
+    name: get-deployment-rolebinding
+
+job:
+  name: wait-for-deployment
+  image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
